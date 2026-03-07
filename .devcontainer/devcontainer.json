@@ -1,0 +1,19 @@
+{
+    "name": "Jarvis Client Development",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "service": "whisper-client-dev",
+    "workspaceFolder": "/app",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "njpwerner.autodocstring",
+                "tamasfe.even-better-toml"
+            ]
+        }
+    },
+    "remoteUser": "root"
+}

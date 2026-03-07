@@ -1,0 +1,16 @@
+services:
+  whisper-client-dev:
+    build: .
+    container_name: whisper-client-dev
+    volumes:
+      - .:/app
+      - /mnt/wslg:/mnt/wslg
+    environment:
+      - SERVER_URL=http://host.docker.internal:8000/v1/audio/transcriptions
+      - PULSE_SERVER=unix:/mnt/wslg/PulseServer
+    stdin_open: true
+    tty: true
+    # Эта команда просто держит контейнер запущенным
+    command: /bin/bash -c "chmod +x /entrypoint.sh && /entrypoint.sh && tail -f /dev/null"
+    devices:
+      - "/dev/snd:/dev/snd"
